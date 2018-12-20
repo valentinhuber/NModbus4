@@ -47,7 +47,7 @@ namespace Modbus.UnitTests.Data
         {
             RegisterCollection col = new RegisterCollection();
             Assert.NotNull(col);
-            Assert.Equal(0, col.NetworkBytes.Length);
+            Assert.True(0 == col.NetworkBytes.Length);
         }
 
         [Fact]
@@ -61,9 +61,9 @@ namespace Modbus.UnitTests.Data
         public void AddRegister()
         {
             RegisterCollection col = new RegisterCollection();
-            Assert.Equal(0, col.Count);
+            Assert.True(0 == col.Count);
             col.Add(45);
-            Assert.Equal(1, col.Count);
+            Assert.True(1 == col.Count);
         }
 
         [Fact]

@@ -44,7 +44,7 @@ namespace Modbus.UnitTests.Data
             ModbusDataCollection<bool> destination = new ModbusDataCollection<bool>(true, true);
             DiscreteCollection newValues = new DiscreteCollection(false);
             DataStore.WriteData(new DataStore(), newValues, destination, 0, new object());
-            Assert.Equal(false, destination[1]);
+            Assert.False(destination[1]);
         }
 
         [Fact]

@@ -33,7 +33,7 @@ namespace Modbus.UnitTests.Data
         {
             DiscreteCollection col = new DiscreteCollection(true, true, true);
             Assert.Equal(3, col.Count);
-            Assert.False(col.Contains(false));
+            Assert.DoesNotContain(false, col);
         }
 
         [Fact]
@@ -62,7 +62,7 @@ namespace Modbus.UnitTests.Data
         public void CreateNewDiscreteCollectionFromBytesParams_ZeroLengthArray()
         {
             DiscreteCollection col = new DiscreteCollection(new byte[0]);
-            Assert.Equal(0, col.Count);
+            Assert.True(0 == col.Count);
         }
 
         [Fact]
@@ -112,9 +112,9 @@ namespace Modbus.UnitTests.Data
         public void AddCoil()
         {
             DiscreteCollection col = new DiscreteCollection();
-            Assert.Equal(0, col.Count);
+            Assert.True(0 == col.Count);
             col.Add(true);
-            Assert.Equal(1, col.Count);
+            Assert.True(1 == col.Count);
         }
     }
 }

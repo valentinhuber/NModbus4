@@ -13,7 +13,7 @@ namespace Modbus.UnitTests.Data
         {
             var col = new ModbusDataCollection<TData>();
             Assert.NotEmpty(col);
-            Assert.Equal(1, col.Count);
+            Assert.True(1 == col.Count);
 
             col.Add(default(TData));
             Assert.Equal(2, col.Count);
@@ -90,7 +90,7 @@ namespace Modbus.UnitTests.Data
             var col = new ModbusDataCollection<TData>(GetArray());
             col.Clear();
 
-            Assert.Equal(1, col.Count);
+            Assert.True(1 == col.Count);
         }
 
         [Fact]

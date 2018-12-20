@@ -11,7 +11,7 @@ namespace Modbus.UnitTests.Message
             WriteSingleRegisterRequestResponse message = new WriteSingleRegisterRequestResponse(12, 5, 1200);
             Assert.Equal(12, message.SlaveAddress);
             Assert.Equal(5, message.StartAddress);
-            Assert.Equal(1, message.Data.Count);
+            Assert.True(1 == message.Data.Count);
             Assert.Equal(1200, message.Data[0]);
         }
 
